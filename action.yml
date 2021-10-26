@@ -1,0 +1,20 @@
+name: 'create-solution'
+description: 'create VS solution'
+author: 'Ralf Beckers'
+branding:
+  color: purple
+  icon: terminal
+inputs:
+  name:  
+    description: 'Name of the solution'
+    required: true
+  version:  
+    description: 'Visual Studio Version'
+    required: true
+    default: '2022'
+  projects:
+    description: 'List of projects to add'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
