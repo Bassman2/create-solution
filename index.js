@@ -21,7 +21,7 @@ async function run() {
 		writer.write('Microsoft Visual Studio Solution File, Format Version 12.00' + eol);
 
 		for (const prj of projects) { 
-			writer.write(`Project("{${uuid.v4()}}") = ${prj}` + eol);
+			writer.write(`Project("{${uuid.v4()}}") = ${prj.trim()}` + eol);
 			writer.write('EndProject' + eol);
 		}
 
