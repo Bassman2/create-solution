@@ -17,12 +17,10 @@ jobs:
     - name: Install create-solution
       uses: ./
       with:
-        name: DemotSolution
-        version: 2019
+        name: DemoSolution
+        projects: Demo1.csproj, Demo2.csproj
+        
         
     - name: Test
-      run: |
-           echo SHFBROOT: %SHFBROOT% 
-           echo TEMP: %TEMP%
-           type %TEMP%\vsixinst.log
+      run: type DemoSolution.sln
       shell: cmd

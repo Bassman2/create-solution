@@ -1,6 +1,4 @@
 const core = require('@actions/core'),
-      exec = require('@actions/exec'),
-      tool = require('@actions/tool-cache'),
       path = require('path'),
 	  fs = require('fs');
 
@@ -9,14 +7,11 @@ async function run() {
 
 		const eol = "\r\n";	
 		const name = core.getInput('name');
-        const version = core.getInput('version');
         const projects = core.getInput('projects');
-        
-		const instFolder = path.join(home, 'InstallResources');
 
         // output infos
-        console.log('Install SHFB Version: ', version);
-        console.log('Download: ', toolUrl);
+        console.log('name: ', name);
+        console.log('projects: ', projects);
 
         
 		let writer = fs.createWriteStream(name + '.sln');
