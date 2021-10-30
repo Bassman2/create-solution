@@ -83,8 +83,8 @@ async function run() {
 		writer.write('    GlobalSection(ProjectConfigurationPlatforms) = postSolution' + eol);
 		for (const p of projects) {
 			for (const c of solutionConfigs) {
-				writer.write(`        ${p.prj.id}.${c}.ActiveCfg = ${c}` + eol);
-				writer.write(`        ${p.prj.id}.${c}.Build.0 = ${c}` + eol);
+				writer.write(`        ${p.prjid}.${c}.ActiveCfg = ${c}` + eol);
+				writer.write(`        ${p.prjid}.${c}.Build.0 = ${c}` + eol);
 				
 			}
 		}
