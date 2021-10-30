@@ -40,7 +40,7 @@ async function run() {
 					prjUuid = prjUuidShare;
 					break;
 				case '.csproj':
-					if (await IfFileStartsWith(solutionProject, '<Project')) {
+					if (IfFileStartsWith(solutionProject, '<Project')) {
 						prjType = PrjType.Core;
 						prjUuid = prjUuidCore;
 					} else {
@@ -116,7 +116,7 @@ async function run() {
     }
 }
 
-async function IfFileStartsWith(filePath, searchString) { 
+function IfFileStartsWith(filePath, searchString) { 
 	const fileContent = await fs.readFile(filePath, 'utf-8');
 	return fileContent.startsWith(searchString);
 } 
