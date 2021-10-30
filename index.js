@@ -27,7 +27,7 @@ async function run() {
         // output infos
         console.log('name: ', solutionName);
         console.log('projects: ', solutionProjects);
-       console.log('configurations: ', solutionConfigs);
+        console.log('configurations: ', solutionConfigs);
 
         var projects = [];
 		for (const solutionProject of solutionProjects) { 
@@ -36,12 +36,17 @@ async function run() {
 			var prjUuid = '';
 			switch (ext) {
 				case '.shproj':
-					prjType = PrjType.Core;
-					prjUuid = prjUuidCore;
-					break;
-				case '.csproj':
 					prjType = PrjType.Share;
 					prjUuid = prjUuidShare;
+					break;
+				case '.csproj':
+					if (IfFileStartsWith(solutionProject, '<Project')) {
+						prjType = PrjType.Core;
+						prjUuid = prjUuidCore;
+					} else {
+						prjType = PrjType.Framework;
+						prjUuid = prjUuidFwk;						
+					}
 					break;
 				case '':
 					prjType = PrjType.Folder;
@@ -110,5 +115,10 @@ async function run() {
         core.setFailed(error.message);
     }
 }
+
+function IfFileStartsWith(filePath, searchString) { 
+	const fileContent = fs.readFile(filePath, 'utf-8');
+	return fileContent.startsWith(searchString);
+} 
 
 run();
