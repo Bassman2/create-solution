@@ -30,7 +30,7 @@ async function run() {
 				"type" : "",
 				"id" : uuid.v4()
 			}
-			prjs.push(car); 
+			prjs.push(p); 
 		}
 
 
