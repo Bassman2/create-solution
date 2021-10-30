@@ -116,8 +116,8 @@ async function run() {
     }
 }
 
-function IfFileStartsWith(filePath, searchString) { 
-	const fileContent = fs.readFile(filePath, 'utf-8');
+async function IfFileStartsWith(filePath, searchString) { 
+	const fileContent = async fs.readFile(filePath, 'utf-8');
 	return fileContent.startsWith(searchString);
 } 
 
