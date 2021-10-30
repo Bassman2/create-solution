@@ -14,8 +14,8 @@ async function run() {
 		const prjTypeShare = "{D954291E-2A0B-460D-934E-DC6B0785DB48}";
 		
 		const solutionName = core.getInput('name');
-        const solutionProjects = core.getInput('projects').split(',').map(p => p.tim());
-        const solutionConfigs = core.getInput('configurations').split(',').map(p => p.tim());
+        const solutionProjects = core.getInput('projects').split(',').map(p => p.trim());
+        const solutionConfigs = core.getInput('configurations').split(',').map(p => p.trim());
 		
         // output infos
         console.log('name: ', solutionName);
