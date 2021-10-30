@@ -40,7 +40,7 @@ async function run() {
 					prjUuid = prjUuidShare;
 					break;
 				case '.csproj':
-					if (IfFileStartsWith(solutionProject, '<Project')) {
+					if (await IfFileStartsWith(solutionProject, '<Project')) {
 						prjType = PrjType.Core;
 						prjUuid = prjUuidCore;
 					} else {
