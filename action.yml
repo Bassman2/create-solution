@@ -12,8 +12,9 @@ inputs:
     description: 'List of projects to add'
     required: true
   configurations:
-    description: 'List of configurations"
-    required: false
+    description: 'List of configurations'
+    required: true
+    
 runs:
   using: 'node12'
   main: 'index.js'

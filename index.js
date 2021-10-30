@@ -27,6 +27,7 @@ async function run() {
         // output infos
         console.log('name: ', solutionName);
         console.log('projects: ', solutionProjects);
+       console.log('configurations: ', solutionConfigs);
 
         var projects = [];
 		for (const solutionProject of solutionProjects) { 
