@@ -34,7 +34,7 @@ async function run() {
 
 
         
-		let writer = fs.createWriteStream(name + '.sln');
+		let writer = fs.createWriteStream(solutionName + '.sln');
 		writer.write('Microsoft Visual Studio Solution File, Format Version 12.00' + eol);
 
         for (const p of projects) { 
