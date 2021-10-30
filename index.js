@@ -74,9 +74,11 @@ async function run() {
 		
 		writer.write('Global' + eol);
 		writer.write('    GlobalSection(SolutionConfigurationPlatforms) = preSolution' + eol);
-		writer.write('        Debug|Any CPU = Debug|Any CPU' + eol);
-		writer.write('        Release|Any CPU = Release|Any CPU' + eol);
+		for (const c of solutionConfigs) {
+			writer.write(`        ${c} = ${c}` + eol);
+		}
 		writer.write('    EndGlobalSection' + eol);
+
 		writer.write('    GlobalSection(ProjectConfigurationPlatforms) = postSolution' + eol);
 		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU' + eol);
 		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU' + eol);

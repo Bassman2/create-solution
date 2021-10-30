@@ -19,7 +19,7 @@ jobs:
       with:
         name: DemoSolution
         projects: Demo1.csproj, Demo2.csproj
-        
+        configurations: Debug|Any CPU,Release|Any CPU
         
     - name: Test
       run: type DemoSolution.sln
