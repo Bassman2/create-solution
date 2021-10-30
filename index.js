@@ -13,40 +13,31 @@ async function run() {
 		const prjTypeCore = "{9A19103F-16F7-4668-BE54-9A1E7A4F7556}";
 		const prjTypeShare = "{D954291E-2A0B-460D-934E-DC6B0785DB48}";
 		
-		const name = core.getInput('name');
-        const proj = core.getInput('projects');
+		const solutionName = core.getInput('name');
+        const solutionProjects = core.getInput('projects').split(',').map(p => p.tim());
+        const solutionConfigs = core.getInput('configurations').split(',').map(p => p.tim());
 		
-		const projects = proj.split(',');
-
         // output infos
-        console.log('name: ', name);
-        console.log('projects: ', projects);
+        console.log('name: ', solutionName);
+        console.log('projects: ', solutionProjects);
 
-        var prjs = [];
-		for (const prj of projects) { 
+        var projects = [];
+		for (const solutionProject of solutionProjects) { 
 			let p = {
-				"name" : path.basename(prj.trim()).split('.').slice(0, -1).join('.'),
-				"path" : prj.trim(),
+				"name" : path.basename(solutionProject).split('.').slice(0, -1).join('.'),
+				"path" : solutionProject,
 				"type" : "",
 				"id" : uuid.v4()
 			}
-			prjs.push(p); 
+			projects.push(p); 
 		}
-
-
-
 
 
         
 		let writer = fs.createWriteStream(name + '.sln');
 		writer.write('Microsoft Visual Studio Solution File, Format Version 12.00' + eol);
 
-		for (const prj of projects) { 
-			writer.write(`Project("${prjTypeCore}") = "${prj.trim()}", "${prj.trim()}", "${uuid.v4()}"` + eol);
-			writer.write('EndProject' + eol);
-		}
-
-        for (const p of prjs) { 
+        for (const p of projects) { 
 			writer.write(`Project("${p.type}") = "${p.name}", "${p.path}", "${p.id}"` + eol);
 			writer.write('EndProject' + eol);
 		}
