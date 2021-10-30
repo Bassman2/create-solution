@@ -58,7 +58,7 @@ async function run() {
 				"typeid" : prjUuid,
 				"name" : path.basename(solutionProject).split('.').slice(0, -1).join('.'),
 				"path" : solutionProject,
-				"prjid" : uuid.v4()
+				"prjid" : `{${uuid.v4()}}`
 			}
 			projects.push(p); 
 		}
@@ -81,11 +81,15 @@ async function run() {
 		writer.write('    EndGlobalSection' + eol);
 
 		writer.write('    GlobalSection(ProjectConfigurationPlatforms) = postSolution' + eol);
-		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU' + eol);
-		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU' + eol);
-		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU' + eol);
-		writer.write('        {53B2BD56-77F4-4E85-B53F-C07CCD842BD7}.Release|Any CPU.Build.0 = Release|Any CPU' + eol);
+		for (const p of projects) {
+			for (const c of solutionConfigs) {
+				writer.write(`        ${p.prj.id}.${c}.ActiveCfg = ${c}` + eol);
+				writer.write(`        ${p.prj.id}.${c}.Build.0 = ${c}` + eol);
+				
+			}
+		}
 		writer.write('    EndGlobalSection' + eol);
+		
 		writer.write('    GlobalSection(SolutionProperties) = preSolution' + eol);
 		writer.write('        HideSolutionNode = FALSE' + eol);
 		writer.write('    EndGlobalSection' + eol);
