@@ -7,6 +7,12 @@ async function run() {
     try {
 
 		const eol = "\r\n";	
+		
+		const prjTypeFolder = "{2150E333-8FDC-42A3-9474-1A3956D46DE8}";
+		const prjTypeFwk = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}";
+		const prjTypeCore = "{9A19103F-16F7-4668-BE54-9A1E7A4F7556}";
+		const prjTypeShare = "{D954291E-2A0B-460D-934E-DC6B0785DB48}";
+		
 		const name = core.getInput('name');
         const proj = core.getInput('projects');
 		
@@ -16,15 +22,35 @@ async function run() {
         console.log('name: ', name);
         console.log('projects: ', projects);
 
+        var prjs = [];
+		for (const prj of projects) { 
+			let p = {
+				"name" : path.basename(prj.trim()).split('.').slice(0, -1).join('.'),
+				"path" : prj.trim(),
+				"type" : "",
+				"id" : uuid.v4()
+			}
+			prjs.push(car); 
+		}
+
+
+
+
+
         
 		let writer = fs.createWriteStream(name + '.sln');
 		writer.write('Microsoft Visual Studio Solution File, Format Version 12.00' + eol);
 
 		for (const prj of projects) { 
-			writer.write(`Project("{${uuid.v4()}}") = ${prj.trim()}` + eol);
+			writer.write(`Project("${prjTypeCore}") = "${prj.trim()}", "${prj.trim()}", "${uuid.v4()}"` + eol);
 			writer.write('EndProject' + eol);
 		}
 
+        for (const p of prjs) { 
+			writer.write(`Project("${p.type}") = "${p.name}", "${p.path}", "${p.id}"` + eol);
+			writer.write('EndProject' + eol);
+		}
+		
 		writer.write('Global' + eol);
 		writer.write('    GlobalSection(SolutionConfigurationPlatforms) = preSolution' + eol);
 		writer.write('        Debug|Any CPU = Debug|Any CPU' + eol);
