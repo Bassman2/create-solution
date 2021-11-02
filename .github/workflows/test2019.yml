@@ -21,7 +21,7 @@ jobs:
       uses: ./
       with:
         name: DemoSolution
-        projects: Tests\CS6\CS6.csproj,Tests\CS4\CS4.csproj
+        projects: Tests\VB4\VB4.vbproj,Tests\CS4\CS4.csproj
         #configurations: Debug|Any CPU,Release|Any CPU
         
     - name: Show Solution
