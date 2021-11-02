@@ -18,8 +18,8 @@ jobs:
       uses: ./
       with:
         name: DemoSolution
-        projects: Demo1.csproj, Demo2.csproj
-        configurations: Debug|Any CPU,Release|Any CPU
+        projects: Tests\CS6\CS6.csproj,Tests\CS4\CS4.csproj
+        #configurations: Debug|Any CPU,Release|Any CPU
         
     - name: Test
       run: type DemoSolution.sln
