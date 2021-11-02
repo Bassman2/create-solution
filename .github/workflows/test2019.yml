@@ -14,13 +14,19 @@ jobs:
     - name: Install checkout
       uses: actions/checkout@v2
       
-    - name: Install create-solution
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.3
+      
+    - name: Create Solution
       uses: ./
       with:
         name: DemoSolution
         projects: Tests\CS6\CS6.csproj,Tests\CS4\CS4.csproj
         #configurations: Debug|Any CPU,Release|Any CPU
         
-    - name: Test
+    - name: Show Solution
       run: type DemoSolution.sln
       shell: cmd
+      
+    - name: MSBuild of solution
+      run: msbuild DemoSolution.sln /p:configuration="Release" /m /verbosity:minimal
