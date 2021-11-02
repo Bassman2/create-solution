@@ -1,8 +1,0 @@
-C:\Users\bs\source\repos\ConsoleApp1\CS4\bin\Debug\CS4.exe.config
-C:\Users\bs\source\repos\ConsoleApp1\CS4\bin\Debug\CS4.exe
-C:\Users\bs\source\repos\ConsoleApp1\CS4\bin\Debug\CS4.pdb
-C:\Users\bs\source\repos\ConsoleApp1\CS4\obj\Debug\CS4.csproj.AssemblyReference.cache
-C:\Users\bs\source\repos\ConsoleApp1\CS4\obj\Debug\CS4.csproj.SuggestedBindingRedirects.cache
-C:\Users\bs\source\repos\ConsoleApp1\CS4\obj\Debug\CS4.csproj.CoreCompileInputs.cache
-C:\Users\bs\source\repos\ConsoleApp1\CS4\obj\Debug\CS4.exe
-C:\Users\bs\source\repos\ConsoleApp1\CS4\obj\Debug\CS4.pdb
