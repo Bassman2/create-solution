@@ -13,7 +13,7 @@ inputs:
     required: true
   configurations:
     description: 'List of configurations'
-    required: true
+    required: false
     
 runs:
   using: 'node12'

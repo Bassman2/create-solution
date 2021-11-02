@@ -1,7 +1,0 @@
-C:\Projects\create-solution-Test\Tests\DemoCS48\bin\Debug\DemoCS48.exe.config
-C:\Projects\create-solution-Test\Tests\DemoCS48\bin\Debug\DemoCS48.exe
-C:\Projects\create-solution-Test\Tests\DemoCS48\bin\Debug\DemoCS48.pdb
-C:\Projects\create-solution-Test\Tests\DemoCS48\obj\Debug\DemoCS48.csproj.AssemblyReference.cache
-C:\Projects\create-solution-Test\Tests\DemoCS48\obj\Debug\DemoCS48.csproj.CoreCompileInputs.cache
-C:\Projects\create-solution-Test\Tests\DemoCS48\obj\Debug\DemoCS48.exe
-C:\Projects\create-solution-Test\Tests\DemoCS48\obj\Debug\DemoCS48.pdb

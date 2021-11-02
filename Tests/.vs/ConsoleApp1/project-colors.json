@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bb3c47b1-f5e1-4d21-884f-642275656a3e": {
+      "ProjectGuid": "bb3c47b1-f5e1-4d21-884f-642275656a3e",
+      "DisplayName": "ConsoleApp1",
+      "ColorIndex": 0
+    },
+    "b77ceb1b-c2dd-4065-806b-1f5253eee4ea": {
+      "ProjectGuid": "b77ceb1b-c2dd-4065-806b-1f5253eee4ea",
+      "DisplayName": "VB6",
+      "ColorIndex": 1
+    },
+    "2944f5c9-8806-4e52-b3bb-2849014ca43f": {
+      "ProjectGuid": "2944f5c9-8806-4e52-b3bb-2849014ca43f",
+      "DisplayName": "VB4",
+      "ColorIndex": 2
+    },
+    "1ecac097-80a6-423e-b1e3-62b1adb3af03": {
+      "ProjectGuid": "1ecac097-80a6-423e-b1e3-62b1adb3af03",
+      "DisplayName": "Documentation1",
+      "ColorIndex": 3
+    },
+    "c73058bc-2bec-439c-8ff9-2318dde862b8": {
+      "ProjectGuid": "c73058bc-2bec-439c-8ff9-2318dde862b8",
+      "DisplayName": "CS6",
+      "ColorIndex": 4
+    },
+    "77574335-b5c5-479e-ab34-719f95b55e02": {
+      "ProjectGuid": "77574335-b5c5-479e-ab34-719f95b55e02",
+      "DisplayName": "CS4",
+      "ColorIndex": 5
+    },
+    "e09024de-922b-4db4-aa40-de0e07084866": {
+      "ProjectGuid": "e09024de-922b-4db4-aa40-de0e07084866",
+      "DisplayName": "CPP",
+      "ColorIndex": 6
+    },
+    "837c83bc-9b92-4361-ae38-85476818c69b": {
+      "ProjectGuid": "837c83bc-9b92-4361-ae38-85476818c69b",
+      "DisplayName": "FS",
+      "ColorIndex": 7
+    },
+    "269b1de8-5465-4b7d-a00c-3c740dfdb239": {
+      "ProjectGuid": "269b1de8-5465-4b7d-a00c-3c740dfdb239",
+      "DisplayName": "TestProject6",
+      "ColorIndex": 8
+    },
+    "ef1911ba-6fbb-4907-b248-3252c9d7a622": {
+      "ProjectGuid": "ef1911ba-6fbb-4907-b248-3252c9d7a622",
+      "DisplayName": "UnitTestProject4",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}
